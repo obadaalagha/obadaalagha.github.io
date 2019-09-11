@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-us">
   <head>
     <title>obada.dev.</title>
 	<meta charset="utf-8" />
@@ -8,8 +8,8 @@
   <body>
     <h1>This is my website, for now.</h1>
 	<p>I'm just testing random stuff here until I can design a fully-fledged proper layout. Play around with anything if you'd like.</p>
-	<p id="test"></p>
 	<button onclick="moneySaved()">Click here to save money!</button>
+	<p id="test"></p>
 	<script>
 	  function moneySaved() {
 	    var years = prompt("How many years will you save money for?");
@@ -19,8 +19,9 @@
 	    for(i = 0; i < years; i++) {
 	      total = ((total + toSave) * 1.08);
 	    }
+		total = total.toFixed(2);
+	  document.getElementById("test").innerHTML = "You will save $" + total + " over a period of " + years + " years with an 8% return rate.";
 	  }
-	  document.getElementById("test").innerHTML = "You will save $" + total + " over " + years + ".";
 	</script>
   </body>
 </html>
