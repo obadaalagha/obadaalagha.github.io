@@ -9,8 +9,8 @@
 	<link rel="stylesheet" href="styles.css"/>
   </head>
   <body class="bg-gray-100">
+	<p class="pl-4 pr-50 text-lg text-gray-900">>obada.dev_</p>
 	<header class="flex items-center bg-gray-600 px-4 py-2 shadow-lg">
-		<p class="px-4 text-lg text-gray-900 justify-left">>obada.dev_</p>
 		<nav>
 			<button type="button" class="block text-gray-900 hover:text-white focus:text-white focus:outline-none">
 				<svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -19,17 +19,14 @@
 			</button>
 		</nav>
 	</header>
-    <h1 class="text-lg text-gray-600 px-5">Who am I?</h1>
-	<p>I'm just testing random stuff here until I can design a fully-fledged proper layout. Play around with anything if you'd like.</p>
-	<div>
-	    <p class="bg-red-400">Does this work?</p>
-	</div>
-	<button class="inline-block px-5 py-3 shadow bg-green-400 " onclick="moneySaved()">Click here to save money!</button>
+	<h1 class="text-xl text-gray-600 px-5">Who am I?</h1>
+	<p class="px-6">I'm a 4th-year Computer Science student based in Southern California.</p>
+	<button class="block px-5 py-3 shadow bg-green-400 hover:bg-green-600 focus:text-gray-300 focus:outline-none" onclick="moneySaved()">Click here to save money!</button>
 	<p id="test"></p>
 	<script>
 	  function moneySaved() {
 	    var years = prompt("How many years will you save money for?");
-		var toSave = parseFloat(prompt("How much are you putting in each year?"));
+		var toSave = parseFloat((prompt("How much are you putting in each year?")));
 		var total = 0;
 	    var i;
 	    for(i = 0; i < years; i++) {
