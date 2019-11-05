@@ -7,18 +7,35 @@
 	<title>obada.dev</title>
 	<base href="https://obada.dev/"/>
 	<link rel="stylesheet" href="styles.css"/>
+	<style>
+		/*@tailwind base;
+		@tailwind components;
+		@tailwind utilities;
+		.btn {
+			@apply rounded shadow px-2 py-1;
+		}*/
+	</style>
   </head>
   <body class="bg-gray-100">
-	<p class="pl-4 pr-50 text-xl text-gray-900 px-3">>obada.dev_</p>
-	<header class="sticky top-0 flex items-center bg-gray-600 px-4 py-2 shadow-lg">
-		<nav>
-			<button type="button" class="block text-gray-900 hover:text-white focus:text-white focus:outline-none">
+	<header class="pl-4 pr-50 text-xl text-gray-900 px-3">
+		>obada.dev_
+	</header>
+	<nav class="sticky top-0 flex items-center bg-gray-600 px-4 py-2 shadow-lg">
+		<div class="block h-6 w-6"> <!-- lg: hidden-->
+			<button type="button" onclick="sideBar()" class="block text-gray-900 hover:text-white focus:text-white focus:outline-none">
 				<svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
 					<path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
 				</svg>
 			</button>
-		</nav>
-	</header>
+		</div>
+	</nav>
+	<span class="flex flex-col justify-center absolute text-lg text-gray-300 p-3 bg-gray-600 shadow-lg hidden" id="sidenav">
+		<a href="#" class="px-2 py-1">Home</a>
+		<a href="#" class="px-2 py-1">Education</a>
+		<a href="#" class="px-2 py-1">Projects</a>
+		<a href="#" class="px-2 py-1">Resources</a>
+		<a href="#" class="px-2 py-1">Contact</a>
+	</span>
 	<h1 class="text-xl text-gray-600 px-4">Who am I?</h1>
 	<p class="px-6">
 		I'm a 4th year Computer Science student based in Southern California. This site is both a portfolio
@@ -31,7 +48,7 @@
 			<li>Back-end: WIP</li>
 			<li>Android: Java</li>
 			<li>Windows: Java, C#/.NET</li>
-			<li>Scientific: Python, C#/Unity</li>
+			<li>Scientific: Python</li>
 			<li>Systems: C</li>
 		</ul>
 	</p>
@@ -43,5 +60,17 @@
 	<p class="px-6">
 		The site was built with Tailwind CSS.
 	</p>
+  <script type="text/javascript">
+      function sideBar() {
+		  const x = document.getElementById("sidenav");
+		  if (x.classList.contains("hidden")) {
+			  x.classList.remove("hidden");
+		      x.classList.add("block");
+		  } else {
+			  x.classList.remove("block");
+		      x.classList.add("hidden");
+		  }
+	  }
+  </script>
   </body>
 </html>
