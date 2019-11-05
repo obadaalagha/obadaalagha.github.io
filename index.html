@@ -14,12 +14,20 @@
 		.btn {
 			@apply rounded shadow px-2 py-1;
 		}*/
+
+		.blinking {
+			animation: blinkingText 1s infinite;
+		}
+		@keyframes blinkingText {
+			0% {color: #FFFFFF}
+			100% {color: #1A202C}
+		}
 	</style>
   </head>
   <body>
 	<div class="bg-gray-100 lg:max-w-5xl m-auto h-screen shadow-lg">
-		<header class="pl-4 pr-50 text-xl text-gray-900 px-3">
-			>obada.dev_
+		<header class="bg-gray-900 pl-4 pr-50 text-xl text-gray-100 px-3 shadow">
+			<p>>obada.dev<span class="blinking">_</span></p>
 		</header>
 		<nav class="sticky top-0 bg-gray-600 px-4 py-2 shadow-lg">
 			<div class="flex flex-row items-center h-6 w-6">
@@ -46,11 +54,11 @@
 			</span> -->
 		</nav>
 		<span class="flex flex-col justify-center absolute text-lg text-gray-300 p-3 bg-gray-600 shadow-lg hidden" id="sidenav">
-			<a href="#" class="px-2 py-1">Home</a>
-			<a href="#" class="px-2 py-1">Education</a>
-			<a href="#" class="px-2 py-1">Projects</a>
-			<a href="#" class="px-2 py-1">Resources</a>
-			<a href="#" class="px-2 py-1">Contact</a>
+			<a href="#" class="px-2 py-1 hover:bg-gray-700">Home</a>
+			<a href="#" class="px-2 py-1 hover:bg-gray-700">Education</a>
+			<a href="#" class="px-2 py-1 hover:bg-gray-700">Projects</a>
+			<a href="#" class="px-2 py-1 hover:bg-gray-700">Resources</a>
+			<a href="#" class="px-2 py-1 hover:bg-gray-700">Contact</a>
 		</span>
 		<h1 class="text-xl text-gray-600 px-4">Who am I?</h1>
 		<p class="px-6">
@@ -83,7 +91,8 @@
 		  const x = document.getElementById("sidenav");
 		  if (x.classList.contains("hidden")) {
 			  x.classList.remove("hidden");
-		      x.classList.add("block");
+			  x.classList.add("block");
+			  x.style.transition = "height 2s";
 		  } else {
 			  x.classList.remove("block");
 		      x.classList.add("hidden");
