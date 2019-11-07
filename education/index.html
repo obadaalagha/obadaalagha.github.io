@@ -62,7 +62,9 @@
 			<p class="px-6">Bachelor of Science in Computer Science<br/><span class="px-2">Minor in Mathematics</span></p>
 			<br/>
 		</div>
-		<div>
+		<!--<button type="button" class="collapse text-xl text-gray-600 px-4 outline-none">Classes for Major:</button>-->
+		<!-- Add hidden & overflow-hidden to the below div -->
+		<div class="to-collapse">
 			<h1 class="text-xl text-gray-600 px-4">
 				Classes for Major:
 			</h1>
@@ -211,6 +213,20 @@
 			    x.classList.remove("block");
 		        x.classList.add("hidden");
 		    }
+		}
+		const coll = document.getElementsByClassName("collapse");
+		var i;
+		for (i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function() {
+				this.classList.toggle("bg-gray-200");
+				var content = this.nextElementSibling;
+				if (Content.classList.contains("block")) {
+					content.classList.toggle("hidden");
+					//content.classList.add("hidden");
+				} else {
+					content.classList.add("block");
+				}
+			});
 		}
   </script>
   </body>
