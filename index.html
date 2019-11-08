@@ -38,12 +38,13 @@
 		</header>
 		<!-- N -->
 		<nav class="sticky top-0 bg-gray-600 px-4 py-2 shadow-lg">
-			<div class="h-6 w-6">
+			<div class="h-6 w-6 flex flex-row">
 				<button type="button" onclick="sideBar()" class="block text-gray-900 hover:text-white focus:text-white focus:outline-none lg:hidden">
 					<svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
 						<path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
 					</svg>
 				</button>
+				<span class="block pl-2 text-gray-900 text-lg self-center cursor-default font-semibold" id="hideOnOpen">Home</span>
 				<div class="hidden lg:flex items-center text-lg text-gray-300 h-full">
 					<a href="../" class="px-6 font-bold hover:bg-gray-700 py-1">Home</a>
 					<a href="/education/" class="px-6 hover:bg-gray-700 py-1">Education</a>
@@ -89,38 +90,21 @@
     <!-- N -->
     <script type="text/javascript">
         function sideBar() {
-	        const x = document.getElementById("sidenav");
+			const x = document.getElementById("sidenav");
+			const y = document.getElementById("hideOnOpen");
 		    if (x.classList.contains("hidden")) {
 			    x.classList.remove("hidden");
 			    x.classList.add("block");
-			    x.style.transition = "height 2s";
+				x.style.transition = "height 2s";
+				y.classList.add("hidden");
+				y.classList.remove("block");
 		    } else {
 			    x.classList.remove("block");
-		        x.classList.add("hidden");
+				x.classList.add("hidden");
+				y.classList.add("block");
+				y.classList.remove("hidden");
 		    }
 		}
   </script>
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyC0f-ucdy5XaTbgUrtnI7P3IthEcQ-EGGs",
-    authDomain: "obadas-personal-website.firebaseapp.com",
-    databaseURL: "https://obadas-personal-website.firebaseio.com",
-    projectId: "obadas-personal-website",
-    storageBucket: "obadas-personal-website.appspot.com",
-    messagingSenderId: "327319000387",
-    appId: "1:327319000387:web:0be70c94dda571565ecbf6"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
-
   </body>
 </html>
