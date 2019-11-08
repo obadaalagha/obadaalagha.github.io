@@ -33,7 +33,7 @@
 		<!-- N -->
 		<nav class="sticky top-0 bg-gray-600 px-4 py-2 shadow-lg">
 			<div class="h-6 w-6 flex flex-row">
-				<button type="button" onclick="sideBar()" class="block text-gray-900 hover:text-white focus:text-white focus:outline-none lg:hidden">
+				<button type="button" onclick="sideBar(this)" class="block text-gray-900 hover:text-white focus:text-white focus:outline-none lg:hidden">
 					<svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
 						<path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
 					</svg>
@@ -79,7 +79,7 @@
     </div>
     <!-- N -->
     <script type="text/javascript">
-        function sideBar() {
+        function sideBar(e) {
             const x = document.getElementById("sidenav");
             const y = document.getElementById("hideOnOpen");
 		    if (x.classList.contains("hidden")) {
@@ -88,11 +88,13 @@
                 x.style.transition = "height 2s";
                 y.classList.add("hidden");
                 y.classList.remove("block");
+                e.classList.add("focus:text-white");
 		    } else {
 			    x.classList.remove("block");
                 x.classList.add("hidden");
                 y.classList.add("block");
                 y.classList.remove("hidden");
+                e.classList.remove("focus:text-white");
 		    }
         }
         function enableSubmit() {
