@@ -19,26 +19,23 @@
 	<base href="https://obada.dev/"/>
 	<link rel="stylesheet" href="styles.css"/>
 	<style>
-		html, body {
-			height: 100%;
-		}
-	    .blink {
-			animation: blinker 1s infinite;
-	    }
-	  	@keyframes blinker {
-			0% {color: #F7FAFC}
-			100% {color: #1A202C}
-	  	}
-	  	.grad {
-			background-image: linear-gradient(#EDF2F7, #FFFFFF)
-	 	}
+	  .blink {
+		animation: blinker 1s infinite;
+	  }
+	  @keyframes blinker {
+		0% {color: #F7FAFC}
+		100% {color: #1A202C}
+	  }
+	  .grad {
+		background-image: linear-gradient(#EDF2F7, #FFFFFF)
+	  }
 	</style>
   </head>
   <!-- Necessary elements across pages marked with 'N' -->
   <!-- N -->
-  <body class="grad flex flex-col h-full">
+  <body class="grad">
 	<!-- N -->
-	<div class="bg-gray-100 h-full lg:w-3/4 m-auto shadow-lg lg:h-screen">
+	<div class="bg-gray-100 h-full lg:w-3/4 m-auto shadow-lg">
 		<!-- N -->
 		<header class="bg-gray-900 pl-4 pr-50 text-xl text-gray-100 px-3 shadow">
 			<p class="font-mono">>obada.dev<span class="blink font-mono">_</span></p>
