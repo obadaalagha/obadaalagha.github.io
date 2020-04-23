@@ -32,40 +32,35 @@
     </style>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
-  <!-- Necessary elements across pages marked with 'N' -->
-  <!-- N -->
   <body class="grad">
-    <!-- N -->
+  <!-- Body container -->
 	<div class="bg-gray-100 h-full lg:w-3/4 lg:h-auto m-auto shadow-lg">
-		<!-- N -->
-		<header class="bg-gray-900 pl-4 pr-50 text-xl text-gray-100 px-3 shadow">
-            <p class="font-mono">>obada.dev<span class="blink font-mono">_</span></p>
-        </header>
-		<!-- N -->
-		<nav class="sticky top-0 bg-gray-600 px-4 py-2 shadow-lg">
-			<div class="h-6 w-6 flex flex-row">
-				<button type="button" onclick="sideBar(this)" class="block text-gray-900 hover:text-white focus:text-white focus:outline-none lg:hidden">
-					<svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-						<path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
-					</svg>
-                </button>
-                <span class="block pl-2 text-gray-900 text-lg self-center cursor-default font-semibold lg:hidden" id="hideOnOpen">Contact</span>
-				<div class="hidden lg:flex items-center text-lg text-gray-300 h-full">
-					<a href="../" class="px-6 hover:bg-gray-700 py-1">Home</a>
-					<a href="../education/" class="px-6 hover:bg-gray-700 py-1">Education</a>
-					<a href="../projects/" class="px-6 hover:bg-gray-700 py-1">Projects</a>
-					<a href="../resources/" class="px-6 hover:bg-gray-700 py-1">Resources</a>
-					<a href="../contact/" class="px-6 font-bold hover:bg-gray-700 py-1">Contact</a>
-				</div>
-            </div>
-            <span class="flex flex-col justify-center absolute text-lg text-gray-300 p-3 bg-gray-600 shadow-lg hidden" id="sidenav">
-                <a href="../" class="px-2 py-1 hover:bg-gray-700">Home</a>
-                <a href="/education/" class="px-2 py-1 hover:bg-gray-700">Education</a>
-                <a href="/projects/" class="px-2 py-1 hover:bg-gray-700">Projects</a>
-                <a href="/resources/" class="px-2 py-1 hover:bg-gray-700">Resources</a>
-                <a href="/contact/" class="px-2 py-1 font-bold hover:bg-gray-700">Contact</a>
-            </span>
-        </nav>
+    <nav class="sticky top-0 bg-gray-900 h-12 lg:h-10 text-xl text-gray-100 flex items-center">
+      <div class="flex flex-row flex-grow lg:flex-grow-0 items-center lg:items-baseline justify-between">
+        <!-- Home button (functions as part of the menu for desktops) -->
+        <a href="../" class="ml-6 hover:text-white"><p class="font-mono">>obada.dev</p></a>
+        <!-- Regular menu for desktops -->
+        <div class="hidden lg:block text-gray-300">
+          <a href="../education/" class="px-6 hover:text-white">/education</a>
+          <a href="../projects/" class="px-6 hover:text-white">/projects</a>
+          <a href="../resources/" class="px-6 hover:text-white">/resources</a>
+          <a href="../contact/" class="px-6 hover:text-white">/contact<span class="blink font-mono">_</span></a>
+        </div>
+        <!-- Hamburger menu for small screens -->
+        <button type="button" onclick="sideBar(this)" class="block justify-end text-gray-200 mr-4 hover:text-white focus:text-white focus:outline-none lg:hidden">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+          </svg>
+          <span class="flex flex-col text-left absolute text-lg text-gray-300 p-3 bg-gray-900 shadow-lg hidden -ml-24" id="sidenav">
+            <a href="../" class="px-2 py-1 hover:bg-gray-800">\home</a>
+            <a href="../education/" class="px-2 py-1 hover:bg-gray-800">\education</a>
+            <a href="../projects/" class="px-2 py-1 hover:bg-gray-800">\projects</a>
+            <a href="../resources/" class="px-2 py-1 hover:bg-gray-800">\resources</a>
+            <a href="../contact/" class="px-2 py-1 font-bold hover:bg-gray-800">\contact</a>
+          </span>
+        </button>
+      </div>
+    </nav>
         <div>
             <form class="flex flex-col text-gray-600 px-4 py-3 mx-auto mt-10 mb-4 shadow w-11/12 sm:w-4/5 lg:w-3/4" method="post" action="https://formspree.io/mgeevvgr">
                     Name: <input class="border border-gray-400 bg-gray-300 rounded px-3 py-1" type="text" name="user_name" placeholder="Your name" required="required"/>
