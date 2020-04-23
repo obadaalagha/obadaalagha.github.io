@@ -60,8 +60,8 @@
 	<!-- Body container -->
 	<div class="bg-gray-100 h-full lg:w-3/4 lg:h-screen m-auto shadow-lg">
     <!-- Navbar -->
-    <nav class="sticky top-0 bg-gray-900 h-10 text-xl text-gray-100 pr-3 flex items-center justify-between">
-      <div class="flex flex-row items-center justify-around lg:items-baseline">
+    <nav class="sticky top-0 bg-gray-900 h-10 text-xl text-gray-100 flex items-center justify-between">
+      <div class="flex flex-row items-center lg:items-baseline">
         <!-- Home button (functions as part of the menu for desktops) -->
         <a href="../" class="px-6 hover:text-white"><p class="font-mono">>obada.dev<span class="blink font-mono">_</span></p></a>
         <!-- Regular menu for desktops -->
@@ -72,16 +72,16 @@
           <a href="/contact/" class="px-6 hover:text-white">/contact</a>
         </div>
         <!-- Hamburger menu for small screens -->
-        <button type="button" onclick="sideBar(this)" class="block text-gray-200 hover:text-white focus:text-white focus:outline-none lg:hidden">
+        <button type="button" onclick="sideBar(this)" class="block justify-end text-gray-200 pr-4 hover:text-white focus:text-white focus:outline-none lg:hidden">
 					<svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
 						<path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
 					</svg>
-          <span class="flex flex-col justify-center absolute text-lg text-gray-300 p-3 bg-gray-900 shadow-lg hidden" id="sidenav">
-    				<a href="../" class="px-2 py-1 font-bold hover:bg-gray-800">Home</a>
-    				<a href="/education/" class="px-2 py-1 hover:bg-gray-800">Education</a>
-    				<a href="/projects/" class="px-2 py-1 hover:bg-gray-800">Projects</a>
-    				<a href="/resources/" class="px-2 py-1 hover:bg-gray-800">Resources</a>
-    				<a href="/contact/" class="px-2 py-1 hover:bg-gray-800">Contact</a>
+          <span class="flex flex-col text-left absolute text-lg text-gray-300 p-3 bg-gray-900 shadow-lg hidden -ml-24" id="sidenav">
+    				<a href="../" class="px-2 py-1 font-bold hover:bg-gray-800">\home</a>
+    				<a href="/education/" class="px-2 py-1 hover:bg-gray-800">\education</a>
+    				<a href="/projects/" class="px-2 py-1 hover:bg-gray-800">\projects</a>
+    				<a href="/resources/" class="px-2 py-1 hover:bg-gray-800">\resources</a>
+    				<a href="/contact/" class="px-2 py-1 hover:bg-gray-800">\contact</a>
     			</span>
 				</button>
       </div>
