@@ -1,0 +1,12 @@
+.blink {
+  animation: blinker 1s infinite;
+}
+
+@keyframes blinker {
+  0% {color: #F7FAFC}
+  100% {color: #1A202C}
+}
+
+.fnt {
+  font-family: Ubuntu Mono;
+}
