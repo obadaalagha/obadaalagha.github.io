@@ -1,103 +1,87 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, intialscale-scale=1.0"/>
-	<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <title>obada.dev</title>
     <meta name="theme-color" content="#1A202C"/>
 
     <!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-regular/apple-touch-icon.png"/>
-	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-regular/favicon-32x32.png"/>
-	<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-regular/favicon-16x16.png"/>
-	<link rel="manifest" href="/img/favicon-regular/site.webmanifest"/>
-	<link rel="mask-icon" href="/img/favicon-regular/safari-pinned-tab.svg" color="#5bbad5"/>
-	<meta name="msapplication-TileColor" content="#2b5797"/>
-	<!-- <meta name="theme-color" content="#ffffff"> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-regular/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-regular/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-regular/favicon-16x16.png"/>
+    <link rel="manifest" href="/img/favicon-regular/site.webmanifest"/>
+    <link rel="mask-icon" href="/img/favicon-regular/safari-pinned-tab.svg" color="#5bbad5"/>
+    <meta name="msapplication-TileColor" content="#2b5797"/>
+    <!-- <meta name="theme-color" content="#ffffff"> -->
 
-	<base href="https://obada.dev/"/>
-	<link rel="stylesheet" href="../css/tailwind.css"/>
-  <link rel="stylesheet" href="../css/styles.css"/>
+    <!-- <base href="https://obada.dev/"/> -->
+    <link rel="stylesheet" href="../css/styles.css"/>
 
+    <!-- Google Fonts: Ubuntu Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+
+    <!-- jQuery from Google - likely cached -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- ReCaptcha -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <style>
+      .dropdown {
+        animation: grow 300ms ease-in-out alternate;
+        transform-origin: top center;
+      }
+      .splash {
+        height: 100vh;
+        background-image: url("../img/landing.jpg");
+        background-position: top center; background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .w96p {
+        width: 96%;
+      }
+    </style>
   </head>
-  <body class="grad">
-  <!-- Body container -->
-	<div class="bg-gray-100 h-full lg:w-3/4 lg:h-auto m-auto shadow-lg">
-    <nav class="sticky top-0 bg-gray-900 h-12 lg:h-10 text-xl text-gray-100 flex items-center font-mono shadow-lg">
-      <div class="flex flex-row flex-grow lg:flex-grow-0 items-center lg:items-baseline justify-between">
-        <!-- Home button (functions as part of the menu for desktops) -->
-        <a href="../" class="ml-6 text-gray-300 hover:text-white">>obada.dev<span class="blink lg:hidden">_</span></a>
-        <!-- Regular menu for desktops -->
-        <div class="hidden lg:block text-gray-300">
-          <a href="../education/" class="px-6 hover:text-white">/education</a>
-          <a href="../projects/" class="px-6 hover:text-white">/projects</a>
-          <a href="../resources/" class="px-6 hover:text-white">/resources</a>
-          <a href="../contact/" class="px-6 hover:text-white text-gray-100">/contact<span class="blink">_</span></a>
+  <body class="fnt bg-gray-800">
+    <nav class="sticky top-0 z-30"> <!-- Whole Navbar-->
+      <div class="bg-gray-900 shadow-xl flex justify-center"> <!-- Navbar background -->
+        <div class="flex flex-grow items-center justify-between max-w-screen-lg p-1"> <!-- constrain navbar to lg -->
+          <div> <!-- Brand -->
+            <a class="navbtn text-2xl hover:bg-gray-900" href="../">>obada.dev<span class="blink">_</span></a>
+          </div>
+          <div> <!-- Dropdown button -->
+            <button type="button" class="block navbtn p-1 ml-32 btnDrop">
+              <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+              </svg>
+            </button>
+          </div>
         </div>
-        <!-- Hamburger menu for small screens -->
-        <button type="button" onclick="sideBar(this)" class="block justify-end text-gray-200 mr-4 hover:text-white focus:text-white focus:outline-none lg:hidden">
-          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
-          </svg>
-          <span class="flex flex-col text-left absolute text-lg text-gray-300 p-3 bg-gray-900 shadow-lg hidden -ml-32" id="sidenav">
-            <a href="../" class="p-1 hover:bg-gray-800">\home</a>
-            <a href="../education/" class="p-1 hover:bg-gray-800">\education</a>
-            <a href="../projects/" class="p-1 hover:bg-gray-800">\projects</a>
-            <a href="../resources/" class="p-1 hover:bg-gray-800">\resources</a>
-            <a href="../contact/" class="p-1 font-bold hover:bg-gray-800">\contact</a>
-          </span>
-        </button>
+      </div>
+      <div class="hidden bg-gray-900 px-2 pt-2 pb-4 dropdown absolute w-full justify-center"> <!-- dropdown menu -->
+        <div class="flex flex-grow flex-col max-w-screen-lg items-center justify-center"> <!-- container for items in dropdown -->
+          <a class="navbtn block w96p text-center" href="../">/home</a>
+          <a class="navbtn block w96p text-center" href="../experience/">/experience</a>
+          <a class="navbtn block w96p text-center" href="../projects/">/projects</a>
+          <a class="navbtn block w96p text-center" href="../resources/">/resources</a>
+          <a class="navbtn block w96p text-center" href="../contact/">/contact</a>
+        </div>
       </div>
     </nav>
-        <div>
-            <form class="flex flex-col text-gray-600 px-4 py-3 mx-auto mt-10 mb-4 shadow w-11/12 sm:w-4/5 lg:w-3/4" method="post" action="https://formspree.io/mgeevvgr">
-                    Name: <input class="border border-gray-400 bg-gray-300 rounded px-3 py-1" type="text" name="user_name" placeholder="Your name" required="required"/>
-                    Email: <input class="border border-gray-400 bg-gray-300 rounded px-3 py-1" type="text" name="_replyto" placeholder="Your email address" required="required"/>
-                    Message: <textarea class="border border-gray-400 rounded bg-gray-300 px-3 py-1 h-48" type="text" name="user_message" placeholder="Send me a message!" required="required"></textarea>
-                    <div class="g-recaptcha self-center pt-4" data-sitekey="6Ld2gMEUAAAAAFTRny_CcGT8rHxNRjXULQMrRm1A" data-callback="enableSubmit"></div>
-                    <input type="hidden" name="_next" value="https://obada.dev/"/>
-                    <input type="hidden" name="_subject" value="New Submission from obada.dev!"/>
-                    <input type="text" name="_gotcha" class="hidden"/>
-                    <button class="text-gray-300 bg-gray-600 hover:bg-gray-700 rounded px-3 py-2 my-4" type="submit" id="formSubmit" disabled="true">Submit</button>
-            </form>
-            <br/>
-            <!--<div style="vertical-align:top;">
-                <h1 class="text-xl text-gray-600">Social Media:</h1>
-                <p>-->
-                    <!--<img src="../img/link.svg" alt="Link"/><a href="https://www.twitter.com/obiethethobie">Twitter</a><br/>-->
-                    <!--<a href="http://t.me/obiethethobie"><img class="float-left w-4 h-7" src="../img/link.svg" alt="Link"/>Telegram</a><br/>
-                    <a href="http://t.me/omikronalif"><img class="float-left w-4 h-8" src="../img/link.svg" alt="Link"/>Telegram Channel</a><br/>
-                </p>-->
-            </div>
-        </div>
+    <div>
+        <form class="flex flex-col bg-gray-800 rounded-lg text-gray-300 px-4 py-3 mx-auto mt-10 mb-4 shadow-2xl w-11/12 sm:w-4/5 lg:w-1/2" method="post" action="https://formspree.io/mgeevvgr">
+                NAME: <input class="border border-gray-400 bg-gray-300 rounded px-3 py-1" type="text" name="user_name" placeholder="Your name" required="required"/>
+                EMAIL: <input class="border border-gray-400 bg-gray-300 rounded px-3 py-1" type="text" name="_replyto" placeholder="Your email address" required="required"/>
+                MESSAGE: <textarea class="border border-gray-400 rounded bg-gray-300 px-3 py-1 h-48" type="text" name="user_message" placeholder="Send me a message!" required="required"></textarea>
+                <div class="g-recaptcha self-center pt-4" data-sitekey="6Ld2gMEUAAAAAFTRny_CcGT8rHxNRjXULQMrRm1A" data-callback="enableSubmit"></div>
+                <input type="hidden" name="_next" value="https://obada.dev/"/>
+                <input type="hidden" name="_subject" value="New Submission from obada.dev!"/>
+                <input type="text" name="_gotcha" class="hidden"/>
+                <button class="text-gray-300 bg-gray-600 hover:bg-gray-700 rounded px-3 py-2 my-4" type="submit" id="formSubmit" disabled="true">Submit</button>
+        </form>
     </div>
-    <!-- N -->
-    <script type="text/javascript">
-        function sideBar(e) {
-            const x = document.getElementById("sidenav");
-            const y = document.getElementById("hideOnOpen");
-		    if (x.classList.contains("hidden")) {
-			    x.classList.remove("hidden");
-			    x.classList.add("block");
-                x.style.transition = "height 2s";
-                y.classList.add("hidden");
-                y.classList.remove("block");
-                e.classList.add("focus:text-white");
-                e.classList.remove("focus:text-gray-900");
-		    } else {
-			    x.classList.remove("block");
-                x.classList.add("hidden");
-                y.classList.add("block");
-                y.classList.remove("hidden");
-                e.classList.remove("focus:text-white");
-                e.classList.add("focus:text-gray-900");
-		    }
-        }
-        function enableSubmit() {
-            document.getElementById("formSubmit").disabled = false;
-        }
-  </script>
+    <script src="../js/dropdown.js"></script>
   </body>
 </html>

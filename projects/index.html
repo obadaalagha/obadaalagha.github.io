@@ -1,98 +1,62 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, intialscale-scale=1.0"/>
-	<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <title>obada.dev</title>
-    <meta name="theme-color" content="#1A202C"/>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- <base href="https://obada.dev/"/> -->
 
-    <!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-regular/apple-touch-icon.png"/>
-	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-regular/favicon-32x32.png"/>
-	<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-regular/favicon-16x16.png"/>
-	<link rel="manifest" href="/img/favicon-regular/site.webmanifest"/>
-	<link rel="mask-icon" href="/img/favicon-regular/safari-pinned-tab.svg" color="#5bbad5"/>
-	<meta name="msapplication-TileColor" content="#2b5797"/>
-	<!-- <meta name="theme-color" content="#ffffff"> -->
+    <!-- Google Fonts: Ubuntu Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-	<base href="https://obada.dev/"/>
-	<link rel="stylesheet" href="../css/tailwind.css"/>
-  <link rel="stylesheet" href="../css/styles.css"/>
+    <!-- jQuery from Google - likely cached -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <style>
+      .dropdown {
+        animation: grow 300ms ease-in-out alternate;
+        transform-origin: top center;
+      }
+      .splash {
+        height: 100vh;
+        background-image: url("../img/landing.jpg");
+        background-position: top center; background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .w96p {
+        width: 96%;
+      }
+    </style>
   </head>
-  <body class="grad">
-	<!-- Body container -->
-	<div class="bg-gray-100 h-full lg:w-3/4 lg:h-screen m-auto shadow-lg">
-		<!-- Navbar -->
-    <nav class="sticky top-0 bg-gray-900 h-12 lg:h-10 text-xl text-gray-100 flex items-center font-mono shadow-lg">
-      <div class="flex flex-row flex-grow lg:flex-grow-0 items-center lg:items-baseline justify-between">
-        <!-- Home button (functions as part of the menu for desktops) -->
-        <a href="../" class="ml-6 text-gray-300 hover:text-white">>obada.dev<span class="blink lg:hidden">_</span></a>
-        <!-- Regular menu for desktops -->
-        <div class="hidden lg:block text-gray-300">
-          <a href="../education/" class="px-6 hover:text-white">/education</a>
-          <a href="../projects/" class="px-6 hover:text-white text-gray-100">/projects<span class="blink">_</span></a>
-          <a href="../resources/" class="px-6 hover:text-white">/resources</a>
-          <a href="../contact/" class="px-6 hover:text-white">/contact</a>
+  <body class="fnt bg-gray-800">
+    <nav class="sticky top-0 z-30"> <!-- Whole Navbar-->
+      <div class="bg-gray-900 shadow-xl flex justify-center"> <!-- Navbar background -->
+        <div class="flex flex-grow items-center justify-between max-w-screen-lg p-1"> <!-- constrain navbar to lg -->
+          <div> <!-- Brand -->
+            <a class="navbtn text-2xl hover:bg-gray-900" href="../">>obada.dev<span class="blink">_</span></a>
+          </div>
+          <div> <!-- Dropdown button -->
+            <button type="button" class="block navbtn p-1 ml-32 btnDrop">
+              <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+              </svg>
+            </button>
+          </div>
         </div>
-        <!-- Hamburger menu for small screens -->
-        <button type="button" onclick="sideBar(this)" class="block justify-end text-gray-200 mr-4 hover:text-white focus:text-white focus:outline-none lg:hidden">
-          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
-          </svg>
-          <span class="flex flex-col text-left absolute text-lg text-gray-300 p-3 bg-gray-900 shadow-lg hidden -ml-24" id="sidenav">
-            <a href="../" class="p-1 hover:bg-gray-800">\home</a>
-            <a href="../education/" class="p-1 hover:bg-gray-800">\education</a>
-            <a href="../projects/" class="p-1 font-bold hover:bg-gray-800">\projects</a>
-            <a href="../resources/" class="p-1 hover:bg-gray-800">\resources</a>
-            <a href="../contact/" class="p-1 hover:bg-gray-800">\contact</a>
-          </span>
-        </button>
+      </div>
+      <div class="hidden bg-gray-900 px-2 pt-2 pb-4 dropdown absolute w-full justify-center"> <!-- dropdown menu -->
+        <div class="flex flex-grow flex-col max-w-screen-lg items-center justify-center"> <!-- container for items in dropdown -->
+          <a class="navbtn block w96p text-center" href="../">/home</a>
+          <a class="navbtn block w96p text-center" href="../experience/">/experience</a>
+          <a class="navbtn block w96p text-center" href="../projects/">/projects</a>
+          <a class="navbtn block w96p text-center" href="../resources/">/resources</a>
+          <a class="navbtn block w96p text-center" href="../contact/">/contact</a>
+        </div>
       </div>
     </nav>
-        <h1 class="text-xl text-gray-800 px-4">Personal Projects</h1>
-        <h2 class="px-6 font-semibold">This Website:</h2>
-        <p class="px-8">
-            I chose to make this website from scratch rather than use a pre-made template since I had no previous UI/UX design or frontend experience. Doing a project like this where I have no experience gives me more insight into coding (and appreciation of the work that goes into websites).
-            <br/>
-            TailwindCSS was appealing as it gave me a higher level of control over how I chose to structure the site. Using a framework like this gives me a much deeper understanding of the steps to website design than frameworks like Bootstrap. It also allowed me to easily implement responsiveness and have it in mind during every iteration of the site.
-            <br/>
-            <br/>
-            I will continuously be updating and changing the website as I improve. The first changes will be adding Vue.JS to the website in the future as well as WebAssembly-based projects under the Resources tab.
-        </p>
-        <!--
-        <p class="px-8">
-            <br/>
-            You can view the source-code for the the tabs here: <a href="view-source:https://obada.dev/" target="_blank">Home</a>, <a></a>, <a></a>, <a></a>, and <a></a>.
-        </p>
-        -->
-        <h1 class="text-xl text-gray-800 px-4">School Projects</h1>
-        <h2 class="px-6 font-semibold">Check back later!</h2>
-        <p class="px-8"></p>
-	</div>
-    <!-- N -->
-    <script type="text/javascript">
-        function sideBar(e) {
-            const x = document.getElementById("sidenav");
-            const y = document.getElementById("hideOnOpen");
-		    if (x.classList.contains("hidden")) {
-			    x.classList.remove("hidden");
-			    x.classList.add("block");
-                x.style.transition = "height 2s";
-                y.classList.add("hidden");
-                y.classList.remove("block");
-                e.classList.add("focus:text-white");
-                e.classList.remove("focus:text-gray-900");
-		    } else {
-			    x.classList.remove("block");
-                x.classList.add("hidden");
-                y.classList.add("block");
-                y.classList.remove("hidden");
-                e.classList.remove("focus:text-white");
-                e.classList.add("focus:text-gray-900");
-		    }
-        }
-  </script>
+    <h1 class="text-4xl font-bold text-center text-blue-500">PROJECTS</h1>
+    <script src="../js/dropdown.js"></script>
   </body>
 </html>
