@@ -711,7 +711,7 @@ video {
 .skillCard {
   width: 87.5%;
   transition: transform .2s;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   border-radius: 0.5rem;
   --bg-opacity: 1;
   background-color: #1a202c;
