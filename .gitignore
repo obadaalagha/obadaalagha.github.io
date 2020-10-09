@@ -69,3 +69,6 @@ classes.txt
 
 # Styles.css backup
 styles_backup.css
+
+# Unminifed css
+styles.unmin.css
