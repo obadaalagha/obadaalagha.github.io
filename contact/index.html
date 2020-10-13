@@ -26,8 +26,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- ReCaptcha -->
-    <!--
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body class="fnt bg-gray-800">
     <nav class="sticky top-0 z-30"> <!-- Whole Navbar-->
@@ -60,8 +59,7 @@
         NAME:<input class="border text-gray-900 border-gray-400 bg-gray-300 rounded px-3 py-1 " type="text" name="user_name" placeholder="Your name" required="required"/>
         EMAIL:<input class="border text-gray-900 border-gray-400 bg-gray-300 rounded px-3 py-1" type="text" name="_replyto" placeholder="Your email address" required="required"/>
         MESSAGE:<textarea class="border text-gray-900 border-gray-400 rounded bg-gray-300 px-3 py-1 h-48" type="text" name="user_message" placeholder="Send me a message!" required="required"></textarea>
-        <!--
-        <div class="g-recaptcha self-center pt-4" data-sitekey="6Ld2gMEUAAAAAFTRny_CcGT8rHxNRjXULQMrRm1A" data-callback="enableSubmit"></div>-->
+        <div class="g-recaptcha self-center pt-4" data-sitekey="6Ld2gMEUAAAAAFTRny_CcGT8rHxNRjXULQMrRm1A" data-callback="enableSubmit"></div>
         <input type="hidden" name="_next" value="https://obada.dev/"/>
         <input type="hidden" name="_subject" value="New Submission from obada.dev!"/>
         <input type="text" name="_gotcha" class="hidden"/>
@@ -79,5 +77,10 @@
       </footer>
     </div>
     <script src="../js/dropdown.js"></script>
+    <script type="text/javascript">
+      function enableSubmit() {
+        $("#formSubmit").disabled = false;
+      }
+    </script>
   </body>
 </html>
