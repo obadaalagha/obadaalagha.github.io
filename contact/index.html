@@ -79,8 +79,12 @@
     <script src="../js/dropdown.js"></script>
     <script type="text/javascript">
       function enableSubmit() {
-        $("#formSubmit").disabled = false;
+        $("#formSubmit").prop('disabled', false);
       }
+      /*
+      function enableSubmit() {
+            document.getElementById("formSubmit").disabled = false;
+      }*/
     </script>
   </body>
 </html>
