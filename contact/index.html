@@ -54,28 +54,31 @@
         </div>
       </div>
     </nav>
-    <div>
+    <main>
       <form class="flex flex-col bg-gray-900 rounded-lg text-gray-300 px-4 py-3 mx-auto mt-10 mb-4 shadow-2xl w-11/12 sm:w-4/5 lg:w-1/2" method="post" action="https://formspree.io/mgeevvgr">
-        NAME:<input class="border text-gray-900 border-gray-400 bg-gray-300 rounded px-3 py-1 " type="text" name="user_name" placeholder="Your name" required="required"/>
-        EMAIL:<input class="border text-gray-900 border-gray-400 bg-gray-300 rounded px-3 py-1" type="text" name="_replyto" placeholder="Your email address" required="required"/>
-        MESSAGE:<textarea class="border text-gray-900 border-gray-400 rounded bg-gray-300 px-3 py-1 h-48" type="text" name="user_message" placeholder="Send me a message!" required="required"></textarea>
+        <label for="full_name">NAME:</label>
+        <input class="border text-gray-900 border-gray-400 bg-gray-300 rounded px-3 py-1" type="text" id="full_name" name="user_name" placeholder="Your name" required="required"/>
+        <label for="email_address">EMAIL:</label>
+        <input class="border text-gray-900 border-gray-400 bg-gray-300 rounded px-3 py-1" type="email" id="email_address" name="_replyto" placeholder="Your email address" title="Please input an email address." required="required"/>
+        <label for="message">MESSAGE:</label>
+        <textarea class="border text-gray-900 border-gray-400 rounded bg-gray-300 px-3 py-1 h-48" type="text" id="message" name="user_message" placeholder="Send me a message!" required="required"></textarea>
         <div class="g-recaptcha self-center pt-4" data-sitekey="6Ld2gMEUAAAAAFTRny_CcGT8rHxNRjXULQMrRm1A" data-callback="enableSubmit"></div>
         <input type="hidden" name="_next" value="https://obada.dev/"/>
         <input type="hidden" name="_subject" value="New Submission from obada.dev!"/>
         <input type="text" name="_gotcha" class="hidden"/>
         <button class="text-gray-300 bg-gray-700 hover:bg-gray-800 rounded px-3 py-2 my-4" type="submit" id="formSubmit" disabled="true">Submit</button>
       </form>
-      <br>
-      <footer>
-        <div><a href="https://obada.dev">obada.dev</a></div>
-        <div class="flex">
-          <a href="https://linkedin.com/in/obada-alagha/" target="_blank"><img src="../img/LI.png" alt="LinkedIn" class="LinkedIn"></a>
-          <a href="https://github.com/obadaalagha/" target="_blank"><img src="../img/github.png" alt="GitHub" class="GitHub"></a>
-        </div>
-        <div>1.1.0</div>
-        <div>Work in Progress.</div>
-      </footer>
-    </div>
+    </main>
+    <br>
+    <footer>
+      <div><a href="https://obada.dev">obada.dev</a></div>
+      <div class="flex">
+        <a href="https://linkedin.com/in/obada-alagha/" target="_blank"><img src="../img/LI.png" alt="LinkedIn" class="LinkedIn"></a>
+        <a href="https://github.com/obadaalagha/" target="_blank"><img src="../img/github.png" alt="GitHub" class="GitHub"></a>
+      </div>
+      <div>1.1.0</div>
+      <div>Work in Progress.</div>
+    </footer>
     <script src="../js/dropdown.js"></script>
     <script type="text/javascript">
       function enableSubmit() {
