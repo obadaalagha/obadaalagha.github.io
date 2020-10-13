@@ -16,7 +16,7 @@
     <meta name="msapplication-TileColor" content="#2b5797"/>
     <!-- <meta name="theme-color" content="#ffffff"> -->
 
-    <!--<base href="https://obada.dev/"/>-->
+    <base href="https://obada.dev/"/>
     <link rel="stylesheet" href="../css/styles.css"/>
 
     <!-- Google Fonts: Ubuntu Mono -->
@@ -26,23 +26,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- ReCaptcha -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-    <style>
-      .dropdown {
-        animation: grow 300ms ease-in-out alternate;
-        transform-origin: top center;
-      }
-      .splash {
-        height: 100vh;
-        background-image: url("../img/landing.jpg");
-        background-position: top center; background-repeat: no-repeat;
-        background-size: cover;
-      }
-      .w96p {
-        width: 96%;
-      }
-    </style>
+    <!--
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
   </head>
   <body class="fnt bg-gray-800">
     <nav class="sticky top-0 z-30"> <!-- Whole Navbar-->
@@ -71,11 +56,12 @@
       </div>
     </nav>
     <div>
-      <form class="flex flex-col bg-gray-900 rounded-lg text-gray-300 px-4 py-3 mx-auto mt-10 mb-4 shadow-2xl w-11/12 sm:w-4/5 lg:w-1/2" method="post" action="https://formspree.io/mgeevvgr">
+      <form class="flex flex-col bg-gray-900 rounded-lg text-gray-300 px-4 py-3 mx-auto mt-10 mb-4 shadow-2xl w-11/12 sm:w-4/5 lg:w-1/2" method="get" action="https://formspree.io/mgeevvgr">
         NAME:<input class="border text-gray-900 border-gray-400 bg-gray-300 rounded px-3 py-1 " type="text" name="user_name" placeholder="Your name" required="required"/>
         EMAIL:<input class="border text-gray-900 border-gray-400 bg-gray-300 rounded px-3 py-1" type="text" name="_replyto" placeholder="Your email address" required="required"/>
         MESSAGE:<textarea class="border text-gray-900 border-gray-400 rounded bg-gray-300 px-3 py-1 h-48" type="text" name="user_message" placeholder="Send me a message!" required="required"></textarea>
-        <div class="g-recaptcha self-center pt-4" data-sitekey="6Ld2gMEUAAAAAFTRny_CcGT8rHxNRjXULQMrRm1A" data-callback="enableSubmit"></div>
+        <!--
+        <div class="g-recaptcha self-center pt-4" data-sitekey="6Ld2gMEUAAAAAFTRny_CcGT8rHxNRjXULQMrRm1A" data-callback="enableSubmit"></div>-->
         <input type="hidden" name="_next" value="https://obada.dev/"/>
         <input type="hidden" name="_subject" value="New Submission from obada.dev!"/>
         <input type="text" name="_gotcha" class="hidden"/>
