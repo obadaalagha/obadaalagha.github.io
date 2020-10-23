@@ -1,19 +1,20 @@
 $(document).ready(function() {
+    let drop = $(".dropdown");
     $(".btnDrop").click(function(e) {
-        if($(".dropdown").hasClass("hidden")) {
-            $(".dropdown").removeClass("hidden");
-            $(".dropdown").addClass("flex")
+        if(drop.hasClass("hidden")) {
+            drop.removeClass("hidden");
+            drop.addClass("flex")
         } else {
-            $(".dropdown").removeClass("flex");
-            $(".dropdown").addClass("hidden");
+            drop.removeClass("flex");
+            drop.addClass("hidden");
         }
         e.stopPropagation();
     });
-    $(".dropdown").click(function(e) {
+    drop.click(function(e) {
         e.stopPropagation();
     });
     $(document).click(function() {
-        $(".dropdown").removeClass("flex");
-        $(".dropdown").addClass("hidden");
+        drop.removeClass("flex");
+        drop.addClass("hidden");
     });
 });
