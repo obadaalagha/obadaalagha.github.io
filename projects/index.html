@@ -13,7 +13,6 @@
 
     <!-- jQuery from Google - likely cached -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
   </head>
   <body class="fnt bg-gray-800">
     <nav class="sticky top-0 z-30"> <!-- Whole Navbar-->
@@ -41,20 +40,30 @@
         </div>
       </div>
     </nav>
-    <div>
-      <script>
-        alert("Please standby - this page is undergoing construction!")
-      </script>
-      <!--<footer class="bg-gray-900 border-t-2 border-gray-900 shadow-inner flex flex-col items-center text-center pt-2 pb-16 mt-4 text-gray-800">
-        <div><a href="https://obada.dev">obada.dev</a></div>
-        <div class="flex">
-        <a href="https://linkedin.com/in/obada-alagha/" target="_blank"><img src="../img/LI.png" alt="LinkedIn" class="LinkedIn"></a>
-        <a href="https://github.com/obadaalagha/" target="_blank"><img src="../img/github.png" alt="GitHub" class="GitHub"></a>
+    <main class="text-gray-400 skills my-8 text-xl max-w">
+      <div class="flex flex-col flex-grow items-center">
+        <div class="projectCard text-center" id="colors">
+          <!--<div id="colors" class="w96p m-auto p-2 text-center rounded">-->
+            <p id="rgb">rgb(26, 32, 44)</p>
+            <p id="hex">#1A202C</p>
+            <p id="hsv">hsv(220, 41, 17)</p>
+            <p id="hsl">hsl(220, 41, 9)</p>
+            <!--<p id="cmyk">cmy(.41, .27, 0, .83)</p>-->
+            <button id="clrBtn">Random color!</button>
+          <!--</div>-->
+        </div>
       </div>
-        <div>1.1.0</div>
-        <div>Work in Progress.</div>
-      </footer>-->
+    </main>
+    <!--<footer class="bg-gray-900 border-t-2 border-gray-900 shadow-inner flex flex-col items-center text-center pt-2 pb-16 mt-4 text-gray-800">
+      <div><a href="https://obada.dev">obada.dev</a></div>
+      <div class="flex">
+      <a href="https://linkedin.com/in/obada-alagha/" target="_blank"><img src="../img/LI.png" alt="LinkedIn" class="LinkedIn"></a>
+      <a href="https://github.com/obadaalagha/" target="_blank"><img src="../img/github.png" alt="GitHub" class="GitHub"></a>
     </div>
+      <div>1.1.0</div>
+      <div>Work in Progress.</div>
+    </footer>-->
     <script src="../js/dropdown.js"></script>
+    <script src="../js/colors.js"></script>
   </body>
 </html>
