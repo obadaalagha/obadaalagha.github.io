@@ -6,6 +6,16 @@ const hsv = document.querySelector('#hsv');
 const hsl = document.querySelector('#hsl');
 //const cmyk = document.querySelector('#cmyk');
 
+const colorSwitch = document.querySelector('#colorSwitch');
+
+colorSwitch.addEventListener('click', () => {
+    if(colorSwitch.textContent === "js") {
+        colorSwitch.textContent = "wasm";
+    } else {
+        colorSwitch.textContent = "js";
+    }
+});
+
 clrBtn.addEventListener('click', () => {
     const rgbcolor = randomColor();
     const hexcolor = convertFromRGB('hex', rgbcolor);

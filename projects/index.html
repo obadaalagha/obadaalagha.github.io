@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <title>obada.dev</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <base href="https://obada.dev/"/>
+    <!--<base href="https://obada.dev/"/>-->
 
     <!-- Google Fonts: Ubuntu Mono -->
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -40,29 +40,36 @@
         </div>
       </div>
     </nav>
-    <main class="text-gray-400 skills my-8 text-xl max-w">
+    <main class="text-gray-400 skills my-8 text-xl max-w h-screen">
       <div class="flex flex-col flex-grow items-center">
-        <div class="projectCard text-center" id="colors">
-          <!--<div id="colors" class="w96p m-auto p-2 text-center rounded">-->
+        <div class="projectCard p-0">
+          <div class="p-2 pb-0 flex flex-row justify-between">
+            <h3 class="text-2xl">Randomized Colors</h3>
+            <button class="btn text-base self-center" id="colorSwitch">js</button>
+          </div>
+          <!--<hr class="slight">-->
+          <p class="px-2 pb-1 text-sm">JavaScript vs. WebAssembly (emscripten and C)</p>
+          <hr class="border-gray-800">
+          <div class="w-full p-2 pb-4 text-center rounded-lg rounded-t-none" id="colors">
             <p id="rgb">rgb(26, 32, 44)</p>
             <p id="hex">#1A202C</p>
             <p id="hsv">hsv(220, 41, 17)</p>
             <p id="hsl">hsl(220, 41, 9)</p>
             <!--<p id="cmyk">cmy(.41, .27, 0, .83)</p>-->
-            <button id="clrBtn">Random color!</button>
-          <!--</div>-->
+            <button class="btn" id="clrBtn">Random color!</button>
+          </div>
         </div>
       </div>
     </main>
-    <!--<footer class="bg-gray-900 border-t-2 border-gray-900 shadow-inner flex flex-col items-center text-center pt-2 pb-16 mt-4 text-gray-800">
-      <div><a href="https://obada.dev">obada.dev</a></div>
+    <footer>
+      <div><a href="#top">obada.dev</a></div>
       <div class="flex">
-      <a href="https://linkedin.com/in/obada-alagha/" target="_blank"><img src="../img/LI.png" alt="LinkedIn" class="LinkedIn"></a>
-      <a href="https://github.com/obadaalagha/" target="_blank"><img src="../img/github.png" alt="GitHub" class="GitHub"></a>
-    </div>
+        <a href="https://linkedin.com/in/obada-alagha/" target="_blank"><img src="../img/LI.png" alt="LinkedIn" class="LinkedIn"></a>
+        <a href="https://github.com/obadaalagha/" target="_blank"><img src="../img/github.png" alt="GitHub" class="GitHub"></a>
+      </div>
       <div>1.1.0</div>
       <div>Work in Progress.</div>
-    </footer>-->
+    </footer>
     <script src="../js/dropdown.js"></script>
     <script src="../js/colors.js"></script>
   </body>
