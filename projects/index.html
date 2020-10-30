@@ -45,18 +45,57 @@
         <div class="projectCard p-0">
           <div class="p-2 pb-0 flex flex-row justify-between">
             <h3 class="text-2xl">Randomized Colors</h3>
-            <button class="btn text-base self-center" id="colorSwitch">js</button>
+            <button class="btn text-base self-center" id="colorSwitch" disabled title="WebAssembly coming soon!">js</button>
           </div>
-          <!--<hr class="slight">-->
-          <p class="px-2 pb-1 text-sm">JavaScript vs. WebAssembly (emscripten and C)</p>
+          <div class="flex flex-row justify-between text-sm px-2">
+            <p class="pb-1 text-sm">JavaScript vs. WebAssembly (emscripten and C)</p>
+            <a class="external" href="https://github.com/obadaalagha/obadaalagha.github.io/blob/master/js/colors.js" target="_blank"><img class="externImg" src="../img/link.svg" alt="-" title="Source Code">Source Code</a>
+          </div>
           <hr class="border-gray-800">
           <div class="w-full p-2 pb-4 text-center rounded-lg rounded-t-none" id="colors">
-            <p id="rgb">rgb(26, 32, 44)</p>
-            <p id="hex">#1A202C</p>
-            <p id="hsv">hsv(220, 41, 17)</p>
-            <p id="hsl">hsl(220, 41, 9)</p>
-            <!--<p id="cmyk">cmy(.41, .27, 0, .83)</p>-->
-            <button class="btn" id="clrBtn">Random color!</button>
+            <table class="flex flex-col items-center pb-2 -m-1">
+              <tr>
+                <td><button id="clrCpOne" title="Copy"><img class="cpImg" src="../img/copy.svg" alt="Copy"></button></td>
+                <td style="width: 192px;"><p class="chngTxt" id="rgb">rgb(26, 32, 44)</p></td>
+              </tr>
+              <tr>
+                <td><button id="clrCpTwo" title="Copy"><img class="cpImg" src="../img/copy.svg" alt="Copy"></button></td>
+                <td><p class="chngTxt" id="hex">#1A202C</p></td>
+              </tr>
+              <tr>
+                <td><button id="clrCpThree" title="Copy"><img class="cpImg" src="../img/copy.svg" alt="Copy"></button></td>
+                <td><p class="chngTxt" id="hsv">hsv(220, 41%, 17%)</p></td>
+              </tr>
+              <tr>
+                <td><button id="clrCpFour" title="Copy"><img class="cpImg" src="../img/copy.svg" alt="Copy"></button></td>
+                <td><p class="chngTxt" id="hsl">hsl(220, 41%, 9%)</p></td>
+              </tr>
+              <!--<tr>
+                <td class="opacity-75"><button id="clrCpFive">L</button></td>
+                <td><p class="chngTxt" id="cmyk">cmy(.41, .27, 0, .83)</p></td>
+              </tr>-->
+            </table>
+            <div class="bg-gray-400 inline-block btn chngTxt chngBtn" id="chClr">
+              <p class="hidden" id="inv">rgb(203, 213, 224)</p>
+              <button class="border border-t-0 border-l-0 border-b-0 border-gray-500 px-2 chngBtn clrBtns mr-0 focus:outline-none" id="clrBtn">Random color!</button>
+              <div class="text-gray-900 chngBtn" id="clrDrop">
+                <button class="px-2 chngBtn clrBtns focus:outline-none" id="clrV">...</button>
+                <div class="hidden flex-col rounded-md text-center text-gray-900 bg-gray-400" id="clrOpts">
+                  <button class="py-1 px-2 rounded-t-md" id="clrReset">Reset</button>
+                  <button class="py-1 px-2" id="clrCpyA">Copy All</button>
+                  <button class="py-1 px-2" id="clrInv">Copy Inverted Color</button>
+                  <button class="py-1 px-2 rounded-b-md" id="clrFive">Last 5 Colors<br>&lt;   &gt;
+                    <!--<ul class="hidden">
+                      <li>A</li>
+                      <li>B</li>
+                      <li>C</li>
+                      <li>D</li>
+                      <li>E</li>
+                    </ul>-->
+                  <</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -67,7 +106,7 @@
         <a href="https://linkedin.com/in/obada-alagha/" target="_blank"><img src="../img/LI.png" alt="LinkedIn" class="LinkedIn"></a>
         <a href="https://github.com/obadaalagha/" target="_blank"><img src="../img/github.png" alt="GitHub" class="GitHub"></a>
       </div>
-      <div>1.1.0</div>
+      <div>1.1.1</div>
       <div>Work in Progress.</div>
     </footer>
     <script src="../js/dropdown.js"></script>
