@@ -76,3 +76,6 @@ styles.unmin.css
 # C source or C executable
 js/colors
 js/colors.c
+
+# Uncompressed image file
+img/landing.jpg
